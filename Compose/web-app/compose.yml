@@ -1,0 +1,38 @@
+services:
+
+  frontend:
+    image: site/app # docker/example-voting-app-vote
+    ports: 
+     - "443/8043"
+    networks:
+     - front-net
+     - back-net
+    configs: 
+      - httpd-config
+    secrets:
+     - server-ca
+  backend: 
+    image: site/database # ubuntu/postgres
+    volumes: 
+      - db-data:/etc/data
+    networks:
+      - back-net
+
+volumes:
+  db-data:
+    driver: flocker
+    driver-opts: 
+      size: "10GiB" 
+
+networks:
+  front-net: {}
+  back-net: {}
+
+configs:
+  httpd-config:
+    external: true
+
+secrets:
+  server-ca:
+    external: true
+
