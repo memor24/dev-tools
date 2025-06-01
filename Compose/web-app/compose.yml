@@ -1,3 +1,5 @@
+# sample dev env docker compose for a web app with frontend and backend services
+version: '3.0'
 services:
 
   frontend:
