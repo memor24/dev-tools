@@ -1,5 +1,4 @@
-Docker compose is used to manage multiple containers in one host, similar to Amazon ECS.
-
+Docker compose is used to manage multiple containers in one host:
 Prepare the configs and secrets. \
 Prepare the images:
 ```
