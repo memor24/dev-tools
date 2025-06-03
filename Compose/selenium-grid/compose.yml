@@ -1,0 +1,35 @@
+#version: "3.8"
+
+services:
+
+  selenium-hub:
+    image: selenium/hub:4.32.0
+    container_name: selenium-hub 
+    ports:
+      - "5555:5555"
+    environment:
+      - GRID_MAX_SESSION=16
+      - GRID_BROWSER_TIMEOUT=300
+      - GRID_TIMEOUT=300
+
+  chrome-node:
+    image: selenium/node-chrome:121.0
+    container_name: chrome-node
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST_ADDR=selenium-hub
+      - HUB_HOST_PORT=5555
+      - NODE_MAX_INSTANCES=2
+      - NODE_MAX_SESSSIONS=2
+
+  firefox-node:
+    image: selenium/node-firefox:128.0
+    container_name: firefox-node
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST_ADDR=selenium-hub
+      - HUB_HOST_POERT=5555
+      - NODE_MAX_INSTANCE=4
+      - NODE_MAX_SESSIONS=4
