@@ -1,8 +1,7 @@
 #creates a (sample nginx) image from dockerhub
 # equivalent cmd: 'docker pull nginx:latest'
+# but images are defined seperately, in order to be managed by terraform for idempotency
 
-#need to define the image seperately to be managed by terraform
-# this is how images are created in kreuzwerker/docker
 data "docker_registry_image" "sth_image" {
   name = "nginx:latest"
 }

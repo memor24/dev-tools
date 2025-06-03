@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     docker = {
-      source  = "kreuzwerker/docker"
+      source  = "kreuzwerker/docker"  # consider how images are created in kreuzwerker/docker
       version = ">= 3.0"
     }
   }
