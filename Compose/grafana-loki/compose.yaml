@@ -1,4 +1,5 @@
-# grafana Loki
+# observability/logging with loki stack
+# This docker-compose file sets up a Grafana, Loki, Promtail, and Prometheus stack for observability.
 version: "3.8"
 
 services:

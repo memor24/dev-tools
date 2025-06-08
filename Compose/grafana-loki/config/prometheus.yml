@@ -3,7 +3,7 @@ global:
   evaluation_interval: 15s
   scrape_timeout: 10s
 
-# Scrape Loki metrics (self-monitoring)
+# scrapes Loki metrics (self-monitoring)
 scrape_configs:
   - job_name: "loki"
     static_configs:
