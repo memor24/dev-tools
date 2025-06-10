@@ -5,7 +5,10 @@ Terraform can be sused to provision the infrastructure resources while maintaini
 ```
 terraform init
 terraform validate
+
 terraform plan
 terraform apply
+
+terraform destroy
 ```
 
